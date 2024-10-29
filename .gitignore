@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Local environment variables
+.env*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Miscellaneous
+.DS_Store
+*.pem
+
+# Coverage directory used by tools like istanbul
+coverage/
