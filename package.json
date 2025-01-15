@@ -1,0 +1,13 @@
+{
+  "name": "websheat",
+  "scripts": {
+    "build": "tailwindcss -i ./static/css/main.css -o ./static/css/styles.css --watch"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "tailwindcss": "^3.4.17"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
