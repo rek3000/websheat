@@ -1,26 +1,24 @@
 <div id="todo-list" class="divide-y">
-    {{range .Todos}}
-    <div >
-        <div class="">
-            <button hx-put="/todos/{{.ID}}/toggle"
-                    hx-target="#todo-list"
-                    class="btn btn-primary">
-            </button>
-            <span class="{{if .Completed}}line-through text-gray-500{{end}}">
-                {{.Title}}
-            </span>
-        </div>
-        <button hx-delete="/todos/{{.ID}}"
-                hx-target="#todo-list"
-                class="">
-            <svg class="" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-        </button>
+  {{range .Todos}}
+  <div>
+    <div class="form-control">
+      <label class="label cursor-pointer">
+        <input type="checkbox" {{if .Completed}}checked{{end}} class="checkbox" hx-put="/todos/{{.ID}}/toggle"
+          hx-target="#todo-list" />
+        <span class="label-text {{if .Completed}}line-through text-gray-500{{end}} transition-all duration-300">
+          {{.Title}}
+        </span>
+      </label>
     </div>
-    {{else}}
-    <div class="p-4 text-center text-gray-500">
-        No todos yet. Add one above!
-    </div>
-    {{end}}
+    <button hx-delete="/todos/{{.ID}}" hx-target="#todo-list" class="">
+      <svg class="" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  {{else}}
+  <div class="p-4 text-center text-gray-500">
+    No todos yet. Add one above!
+  </div>
+  {{end}}
 </div>

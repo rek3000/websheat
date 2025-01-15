@@ -2,8 +2,8 @@ root = "."
 tmp_dir = "tmp"
 
 [build]
-  cmd = "go build cmd/ -o ./cmd/main"
-  bin = "./cmd/main"
+  cmd = "go build -o bin/app cmd/main.go"
+  bin = "./bin/app"
   delay = 1000
   exclude_dir = ["assets", "tmp", "vendor"]
   include_ext = ["go", "html", "css", "js"]
